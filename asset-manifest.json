@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/TextN-X-App/static/css/main.f855e6bc.css",
+    "main.js": "/TextN-X-App/static/js/main.c5f865e2.js",
+    "static/js/787.d4aba7ab.chunk.js": "/TextN-X-App/static/js/787.d4aba7ab.chunk.js",
+    "index.html": "/TextN-X-App/index.html",
+    "main.f855e6bc.css.map": "/TextN-X-App/static/css/main.f855e6bc.css.map",
+    "main.c5f865e2.js.map": "/TextN-X-App/static/js/main.c5f865e2.js.map",
+    "787.d4aba7ab.chunk.js.map": "/TextN-X-App/static/js/787.d4aba7ab.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.c5f865e2.js"
+  ]
+}
