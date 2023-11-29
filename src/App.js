@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import "./App.css";
-// import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
+import About from "./components/About";
 import Alert from "./components/Alert";
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
-//   Link
-// } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+
+} from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light"); // whenever enable dark mode or note
@@ -43,26 +43,26 @@ function App() {
 
   return (
     <>
-      {/* {  <Navbar title="TextN-X" About="About"/>} */}
-      {/* <Navbar/> */}
-      {/* <Router> */}
+      <Router>
         {<Navbar title="TextN-X" mode={mode} toggleMode={toggleMode} />}
         <Alert alert={alert} />
-        {/* <div className="container my-3">
+
+        <div className="container my-3">
           <Switch>
-            <Route exact path="/About"> */}
-              {/* <About />
-            </Route>
-            <Route exact path="/"> */}
+          <Route path='/about'/>
+
+               <About mode={mode}/>
+     
+            <Route path="/"/>
               <TextForm
                 showAlert={showAlert}
-                h1="Re-New-Text Here> Write text File in the box for Changes"
+                h1="Try TextN-X Word Counter, Character Counter Remove Extra Spaces"
                 mode={mode}
               />
-            {/* </Route>
-           </Switch> */}
-         {/* </div> */}
-     {/* </Router> */}
+         
+           </Switch>
+         </div>
+     </Router>
     </>
   )
 };

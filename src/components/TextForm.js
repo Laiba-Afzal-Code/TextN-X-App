@@ -17,9 +17,7 @@ export default function TextForm(props) {
     props.showAlert("Cleared Text!", "warning");
   };
   const handelCopy = () => {
-    let text = document.getElementById("my-box")
-   text.select();
-   navigator.clipboard.writeText(text.value);
+   navigator.clipboard.writeText(text);
    props.showAlert("Copied text on Clipboard!", "success");
   };
   const handelExtraSpece = () => {
@@ -37,42 +35,42 @@ export default function TextForm(props) {
     <>
       <div>
         <div className="container">
-          <h1 className=" text-info">{props.h1}</h1>
+          <h1 className=" text-info mb-4">{props.h1}</h1>
           <div className="mb-3">
             <label forindex="my-box" className="form-label fw-medium text-info">
               Enter your text for changes!
             </label>
             <textarea
               className="form-control"
-              value={text} style={{backgroundColor: props.mode ==='dark'?'gray':'white', color: props.mode ==='dark'?'white':'black'}}
+              value={text} style={{backgroundColor: props.mode ==='dark'?'rgb(83, 82, 82)':'white', color: props.mode ==='dark'?'white':'black'}}
               id="my-box"
               onChange={changeMood}
               rows="8"
             ></textarea>
           </div>
-          <button className="btn btn-warning mx-1" onClick={handelUpclick}>
+          <button disabled={text.length===0} className="btn btn-warning mx-1 my-1" onClick={handelUpclick}>
             Convert UpperCase
           </button>
-          <button className="btn btn-info mx-1" onClick={handelLowclick}>
+          <button  disabled={text.length===0} className="btn btn-info mx-1 my-1" onClick={handelLowclick}>
             Convert LowerCase
           </button>
-          <button className="btn btn-secondary mx-1" onClick={handelExtraSpece}>
+          <button  disabled={text.length===0} className="btn btn-secondary mx-1 my-1" onClick={handelExtraSpece}>
             Remove Extra Spaces
           </button>
-          <button className="btn btn-danger mx-1" onClick={handelClearclick}>
+          <button  disabled={text.length===0} className="btn btn-danger mx-1 my-1" onClick={handelClearclick}>
             Clear Text
           </button>
-          <button className="btn btn-dark mx-1" onClick={handelCopy}>
+          <button  disabled={text.length===0} className="btn btn-dark mx-1 my-1" onClick={handelCopy}>
             Copy Text
           </button>
         </div>
       </div>
       <div className="container my-3">
         <h1>Your Text summary</h1>
-        <p>{text.split(" ").length} word and {text.length} Characters</p>
-        <p>{0.008 *text.split("").length} Minutes for reading</p>
+        <p>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length} word and {text.length} Characters</p>
+        <p>{0.008 *text.split("").filter((element)=>{return element.length!==0}).length} Minutes for reading</p>
         <h2>Preview Text</h2>
-        <p>{text.length>0?text:"Enter Something into text-box above to Preview it here!"}</p>
+        <p>{text.length>0?text:"Nothing to Preview!"}</p>
       </div>
     </>
   );
