@@ -35,10 +35,10 @@ export default function TextForm(props) {
     <>
       <div>
         <div className="container">
-          <h1 className=" text-info mb-4">{props.h1}</h1>
+          <h1 className=" text-info mb-4 py-5">{props.h1}</h1>
           <div className="mb-3">
             <label forindex="my-box" className="form-label fw-medium text-info">
-              Enter your text for changes!
+              Enter your text for Different changes!
             </label>
             <textarea
               className="form-control"

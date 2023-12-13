@@ -4,12 +4,7 @@ import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import About from "./components/About";
 import Alert from "./components/Alert";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light"); // whenever enable dark mode or note
@@ -43,26 +38,19 @@ function App() {
 
   return (
     <>
-      <Router>
+    <BrowserRouter>
         {<Navbar title="TextN-X" mode={mode} toggleMode={toggleMode} />}
         <Alert alert={alert} />
 
-        <div className="container my-3">
-          <Switch>
-          <Route path='/about'/>
-
-               <About mode={mode}/>
-     
-            <Route path="/"/>
-              <TextForm
+      <Routes>
+        <Route exist path="/about" element={<About/>}></Route>
+             <Route exist path="/textform" element={<TextForm
                 showAlert={showAlert}
                 h1="Try TextN-X Word Counter, Character Counter Remove Extra Spaces"
                 mode={mode}
-              />
-         
-           </Switch>
-         </div>
-     </Router>
+                />}></Route> 
+      </Routes>
+                </BrowserRouter>
     </>
   )
 };
