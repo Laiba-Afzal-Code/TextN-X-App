@@ -26,7 +26,7 @@
     <img src="/img/ab2.png" alt="About">
       <h5>Light mode</h5>
       <h1>Demo</h1>
-      [https://laiba-afzal-code.github.io/TextN-X-App/](https://laiba-afzal-code.github.io/TextN-X-App/)
+   <a href="https://laiba-afzal-code.github.io/TextN-X-App/"> Open this link and Explore app features </a>
     <h4>we created this Text Web-App to Utilize our text to make different changes in your ugli to make professional text Let's explore my Code files to enhance your knowledge and if you have more knowledge about this and do you feel to improve this app and do you want to add some new feature in this app so feel free send us pull request with amazing features Thanks for coming in my code</></h4>
     <h2>Laiba-Afzal-Code</h2>
     <h2>Frant-End Developer</h2>
